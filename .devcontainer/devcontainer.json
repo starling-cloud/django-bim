@@ -1,0 +1,19 @@
+{
+    "name": "Django Plugin Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-python.python",
+        "batisteo.vscode-django"
+    ],
+    "forwardPorts": [
+        8000
+    ],
+    "postCreateCommand": "poetry install",
+    "remoteUser": "root"
+}
