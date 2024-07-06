@@ -9,6 +9,10 @@
 Provides IFC Organization Model Class
 =====================================
 
+This model represents an organization as defined in the IFC 2x3 standard,
+encompassing entities involved in construction projects. This model captures
+crucial details such as the organization's name, unique identifier, roles
+within construction projects, and their addresses.
 
 For more information, refer to:
 https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcactorresource/lexical/ifcorganization.htm
@@ -53,24 +57,21 @@ class IfcOrganizationModel(models.Model):
     IFC Organization Model Class
     ============================
 
-    Represents an IfcOrganization as defined by the IFC standards.
-
-    Captures essential details about organizations participating in various
-    capacities within construction projects. These include their name,
-    a unique identifier, their roles, and a description of their activities.
+    Represents an IfcOrganization as defined by IFC standards, detailing
+    organizations involved in various capacities within construction projects.
 
     Attributes:
-        identifier (IfcIdentifierField): A unique identifier for the
-            organization, such as a registration number. Allows null and
-            blank for flexibility.
-        name (IfcLabelField): The official name of the organization. Allows
-            null and blank.
-        description (IfcTextField): Additional information about the
-            organization. Allows null and blank.
-        roles (ManyToManyField): Associations to different roles the
-            organization might perform within the construction process, as
-            defined in a separate `IfcRoleModel`.
-
+        identifier (IfcIdentifierField): A unique, optionally nullable
+            identifier for the organization.
+        name (IfcLabelField): The formal name of the organization, which can
+            also be left unspecified.
+        description (IfcTextField): Descriptive text about the organization's
+            function or structure.
+        roles (ManyToManyField): Links to defined roles the organization
+            fulfills in the construction process.
+        address (ManyToManyField): Links to addresses associated with the
+            organization, covering both physical and electronic forms of
+            contact.
     """
 
     identifier = IfcIdentifierField(
@@ -102,13 +103,23 @@ class IfcOrganizationModel(models.Model):
         blank=True
     )
 
+    address = models.ManyToManyField(
+        'IfcAddressModel',
+        verbose_name=_("Addresses"),
+        help_text=_("Postal and telecom addresses of an organization."),
+        blank=True
+    )
+
     def __str__(self) -> str:
+        """
+        Provides a human-readable representation of the organization,
+        defaulting to a placeholder if the name is unspecified.
+        """
         return self.name or _("Unnamed Organization")
 
     class Meta:
-        verbose_name = _("IfcOrganization")
-        verbose_name_plural = _("IfcOrganizations")
+        verbose_name = _("IFC Organization")
+        verbose_name_plural = _("IFC Organizations")
         indexes = [
-            # Indexing on identifier to improve lookup performance.
-            models.Index(fields=['identifier']),
+            models.Index(fields=['identifier'], name='idx_ifc_organization_identifier')  # noqa E501
         ]
