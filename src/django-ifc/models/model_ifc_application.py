@@ -81,7 +81,7 @@ class IfcApplicationModel(models.Model):
     """
 
     application_developer = models.ForeignKey(
-        'IfcOrganization',
+        'IfcOrganizationModel',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
