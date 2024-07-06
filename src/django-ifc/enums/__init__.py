@@ -11,6 +11,7 @@ standards.
 
 Currently, the module includes:
 - `IfcAddressTypeEnum`: ...
+- `IfcChangeActionEnum`: ...
 - `IfcRoleEnum`: Enumerations for different roles specified in IFC standards
     that can be assigned to actors in a building construction project.
 - `IfcStateEnum`: ...
@@ -23,6 +24,7 @@ Currently, the module includes:
 
 # Local enumeration modules
 from .enum_ifc_address_type import IfcAddressTypeEnum
+from .enum_ifc_change_action import IfcChangeActionEnum
 from .enum_ifc_role import IfcRoleEnum
 from .enum_ifc_state import IfcStateEnum
 
@@ -33,6 +35,7 @@ from .enum_ifc_state import IfcStateEnum
 
 __all__ = [
     "IfcAddressTypeEnum",
+    "IfcChangeActionEnum",
     "IfcRoleEnum",
     "IfcStateEnum",
 ]
