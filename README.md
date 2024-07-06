@@ -1,6 +1,6 @@
-# Django IFC
+# Django BIM
 
-Django IFC is a Django plugin designed to manage building data based on Industry Foundation Classes (IFC). This plugin provides an easy-to-use interface for integrating and managing IFC data within Django applications.
+Django BIM is a Django plugin designed to manage building data based on Industry Foundation Classes (IFC). This plugin provides an easy-to-use interface for integrating and managing IFC data within Django applications.
 
 ## Features
 
@@ -10,23 +10,23 @@ Django IFC is a Django plugin designed to manage building data based on Industry
 
 ## Installation
 
-To install Django IFC, you can use pip:
+To install Django BIM, you can use pip:
 
 ```bash
-pip install django-ifc
+pip install django-bim
 ```
 
 Alternatively, if you want to install from source:
 
 ```bash
-git clone https://github.com/yourusername/django-ifc.git
-cd django-ifc
+git clone https://github.com/yourusername/django-bim.git
+cd django-bim
 poetry install
 ```
 
 ## Quick Start
 
-To get started with Django IFC, add it to your installed apps in your Django settings:
+To get started with Django BIM, add it to your installed apps in your Django settings:
 
 ```python
 INSTALLED_APPS = [
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 
 ## Usage
 
-Here is a basic example of how to use Django IFC in your project:
+Here is a basic example of how to use Django BIM in your project:
 
 ```python
 # Example usage code here
@@ -54,11 +54,11 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## Authors
 
-- **Starling Associates** - *Initial work* - [Starling Associates](https://github.com/starling-cloud/django-ifc)
+- **Starling Associates** - *Initial work* - [Starling Associates](https://github.com/starling-cloud/django-bim)
 
 ## Acknowledgments
 
