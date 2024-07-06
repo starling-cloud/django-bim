@@ -30,7 +30,7 @@ https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcutilityresour
 # Import | Libraries
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 # Import | Local Modules
 from ..fields.model import (
