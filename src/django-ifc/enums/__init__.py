@@ -10,6 +10,7 @@ application to ensure consistency and compliance with the predefined IFC
 standards.
 
 Currently, the module includes:
+- `IfcAddressTypeEnum`: ...
 - `IfcRoleEnum`: Enumerations for different roles specified in IFC standards
     that can be assigned to actors in a building construction project.
 
@@ -20,12 +21,15 @@ Currently, the module includes:
 # =============================================================================
 
 # Local enumeration modules
+from .enum_ifc_address_type import IfcAddressTypeEnum
 from .enum_ifc_role import IfcRoleEnum
+
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
 __all__ = [
-    'IfcRoleEnum',
+    "IfcAddressTypeEnum",
+    "IfcRoleEnum",
 ]
