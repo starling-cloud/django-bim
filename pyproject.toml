@@ -1,9 +1,13 @@
 [tool.poetry]
-name = "django-ifc"
+name = "django-bim"
 version = "0.0.1"
 description = "A Django plugin to manage building data based on IFC"
 authors = ["Starling Associates <info@starling.associates>"]
-license = "Apache License, Version 2.0"
+license = "Apache-2.0"
+
+packages = [
+    { include = "django-bim", from = "src" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -11,6 +15,8 @@ Django = "^4.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0"
+
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -20,8 +26,8 @@ build-backend = "poetry.core.masonry.api"
 django_ifc_manage = "django_ifc.manage:main"
 
 [tool.poetry.urls]
-"Homepage" = "https://github.com/starling-cloud/django-ifc"
-"Repository" = "https://github.com/starling-cloud/django-ifc"
+"Homepage" = "https://github.com/starling-cloud/django-bim"
+"Repository" = "https://github.com/starling-cloud/django-bim"
 
 [tool.black]
 line-length = 79
