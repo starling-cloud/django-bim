@@ -3,7 +3,7 @@ name = "django-ifc"
 version = "0.0.1"
 description = "A Django plugin to manage building data based on IFC"
 authors = ["Starling Associates <info@starling.associates>"]
-license = "MIT"
+license = "Apache License, Version 2.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
