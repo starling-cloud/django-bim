@@ -65,36 +65,34 @@ class IfcOwnerHistoryModel(models.Model):
     made, according to the IFC 2x3 standard.
 
     Attributes:
-        creation_user (ForeignKey): User who created the entity.
-        modification_user (ForeignKey): User who last modified the entity.
-        creation_date (IfcTimestampField): Timestamp when the entity was
-            created.
-        last_modified_date (IfcTimestampField): Timestamp when the entity
-            was last modified.
-        change_action (CharField): Type of change made (e.g., modified,
-            added, deleted).
-        state (CharField): State of the entity at the time of the last
-            modification.
+        creation_user (ForeignKey): The user who initially created the entity.
+        modification_user (ForeignKey): The user who last modified the entity.
+        creation_date (IfcTimestampField): When the entity was created.
+        last_modified_date (IfcTimestampField): When the entity was last
+            modified.
+        change_action (CharField): Type of change made (modified, added,
+            deleted).
+        state (CharField): State of the entity at the last modification.
         application (ForeignKey): Application used for the modification.
 
     """
 
     creation_user = models.ForeignKey(
-        User,
-        related_name="created_ifc_entities",
+        'IfcPersonAndOrganizationModel',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
+        related_name='created_ifc_entities',
         verbose_name=_("Creation User"),
         help_text=_("The user who initially created the entity.")
     )
 
     modification_user = models.ForeignKey(
-        User,
-        related_name="modified_ifc_entities",
+        'IfcPersonAndOrganizationModel',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
+        related_name='modified_ifc_entities',
         verbose_name=_("Modification User"),
         help_text=_("The user who last modified the entity.")
     )
