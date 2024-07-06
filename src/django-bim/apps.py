@@ -6,7 +6,7 @@
 # =============================================================================
 
 """
-Provides Django IFC Config Class
+Provides Django BIM Config Class
 ===============================
 
 
@@ -36,9 +36,9 @@ from django.utils.translation import gettext_lazy as _
 # Classes
 # =============================================================================
 
-class DjangoIfcConfig(AppConfig):
+class DjangoBimConfig(AppConfig):
     """
-    Django IFC Config Class
+    Django BIM Config Class
     ======================
 
     Django AppConfig for managing the Django IFC application.
@@ -58,13 +58,13 @@ class DjangoIfcConfig(AppConfig):
     """
 
     # Full Python path to the application
-    name = 'django_ifc'
+    name = 'django-bim'
 
     # Short name for the application, used in relation naming
-    label = 'django_ifc'
+    label = 'django-bim'
 
     # Human-readable name for the application
-    verbose_name = _("Django IFC")
+    verbose_name = _("Django BIM")
 
     # Specifies the type of primary key to use by default for models in
     # this application
