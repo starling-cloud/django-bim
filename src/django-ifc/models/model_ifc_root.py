@@ -23,7 +23,7 @@ subtypes of IfcRoot, are not supposed to be independent entities.
 
 https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifckernel/lexical/ifcroot.htm
 
-"""
+"""  # noqa E501
 
 
 # =============================================================================
