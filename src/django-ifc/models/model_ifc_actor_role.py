@@ -100,5 +100,5 @@ class IfcActorRoleModel(models.Model):
         return self.get_role_type_display()
 
     class Meta:
-        verbose_name = _("IfcActorRole")
-        verbose_name_plural = _("IfcActorRoles")
+        verbose_name = _("IFC Actor Role")
+        verbose_name_plural = _("IFC Actor Roles")
