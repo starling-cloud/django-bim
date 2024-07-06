@@ -36,11 +36,13 @@ from ..fields.model import (
     # IfcGloballyUniqueIdField,
     # IfcIdentifierField,
     IfcLabelField,
+    IfcRoleTypeField,
     IfcTextField,
 )
-from ..enums import (
-    IfcRoleEnum,
-)
+# from ..enums import (
+#     IfcRoleEnum,
+# )
+
 
 # =============================================================================
 # Variables
@@ -73,10 +75,7 @@ class IfcActorRoleModel(models.Model):
             associated with the role.
     """
 
-    role_type = models.CharField(
-        max_length=50,
-        choices=IfcRoleEnum.choices(),
-        default=IfcRoleEnum.USERDEFINED.name,
+    role_type = IfcRoleTypeField(
         verbose_name=_("Role"),
         help_text=_("The role of the actor in the project according to IFC standards.")  # noqa E501
     )
