@@ -24,6 +24,7 @@ Django applications.
 
 # Import | Local Modules
 from .field_model_ifc_guid import IfcGloballyUniqueIdField
+from .field_model_ifc_identifier import IfcIdentifierField
 from .field_model_ifc_label import IfcLabelField
 from .field_model_ifc_text import IfcTextField
 
@@ -34,6 +35,7 @@ from .field_model_ifc_text import IfcTextField
 
 __all__ = [
     "IfcGloballyUniqueIdField",
+    "IfcIdentifierField",
     "IfcLabelField",
     "IfcTextField",
 ]
