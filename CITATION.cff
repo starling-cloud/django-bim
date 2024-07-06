@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: Django IFC
+version: 0.0.1
+date-released: 2024-07-01
+url: "https://github.com/starling-cloud/django-ifc"
+message: >-
+  If you use Django IFC, please cite it using
+  the metadata from this file.
+type: software
+authors:
+  - given-names: Lars Bastiaan
+    family-names: van Vianen
+    email: lars@starling.studio
+    affiliation: Starling Associates
+    orcid: 'https://orcid.org/0000-0002-8790-8630'
