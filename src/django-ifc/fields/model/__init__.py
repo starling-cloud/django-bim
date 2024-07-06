@@ -28,6 +28,7 @@ from .field_model_ifc_identifier import IfcIdentifierField
 from .field_model_ifc_label import IfcLabelField
 from .field_model_ifc_role_type import IfcRoleTypeField
 from .field_model_ifc_text import IfcTextField
+from .field_model_ifc_timestamp import IfcTimestampField
 
 
 # =============================================================================
@@ -40,4 +41,5 @@ __all__ = [
     "IfcLabelField",
     "IfcRoleTypeField",
     "IfcTextField",
+    "IfcTimestampField",
 ]
