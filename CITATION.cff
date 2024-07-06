@@ -2,8 +2,8 @@ cff-version: 1.2.0
 title: Django IFC
 version: 0.0.1
 date-released: 2024-07-01
-url: "https://github.com/starling-cloud/django-ifc"
-repository-code: "https://github.com/starling-cloud/django-ifc"
+url: "https://github.com/starling-cloud/django-bim"
+repository-code: "https://github.com/starling-cloud/django-bim"
 license: "Apache License, Version 2.0"
 message: >-
   If you use Django IFC, please cite it using
