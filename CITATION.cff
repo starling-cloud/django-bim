@@ -3,6 +3,8 @@ title: Django IFC
 version: 0.0.1
 date-released: 2024-07-01
 url: "https://github.com/starling-cloud/django-ifc"
+repository-code: "https://github.com/starling-cloud/django-ifc"
+license: "MIT"
 message: >-
   If you use Django IFC, please cite it using
   the metadata from this file.
