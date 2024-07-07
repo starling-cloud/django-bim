@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """
-Django IFC Enums Module
+Django BIM Enums Module
 =======================
 
 This module provides enumeration classes that align with the IFC (Industry
-Foundation Classes) standards. These enums are used throughout the Django IFC
+Foundation Classes) standards. These enums are used throughout the Django BIM
 application to ensure consistency and compliance with the predefined IFC
 standards.
 
