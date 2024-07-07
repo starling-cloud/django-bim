@@ -58,14 +58,14 @@ class DjangoBimConfig(AppConfig):
     """
 
     # Full Python path to the application
-    name = 'django-bim'
+    name = "django-bim"
 
     # Short name for the application, used in relation naming
-    label = 'django-bim'
+    label = "django-bim"
 
     # Human-readable name for the application
     verbose_name = _("Django BIM")
 
     # Specifies the type of primary key to use by default for models in
     # this application
-    default_auto_field = 'django.db.models.BigAutoField'
+    default_auto_field = "django.db.models.BigAutoField"
