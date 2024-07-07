@@ -1,20 +1,41 @@
 https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifckernel/lexical/ifcproduct.htm
 
-from django.db import models
+class IfcProduct(IfcObjectDefinition):
+    """
+    Django model representing an IfcProduct as defined in the IFC 2x3 standard.
 
-class IfcProduct(models.Model):
-    # Attributes
-    name = models.CharField(max_length=255, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
-    object_placement = models.JSONField(blank=True, null=True, help_text="Spatial structure defining the object's placement in the project.")
-    representation = models.JSONField(blank=True, null=True, help_text="Physical or geometric representation of the product.")
-    
-    # Relationships
-    project = models.ForeignKey('IfcProject', on_delete=models.CASCADE, related_name='products', blank=True, null=True)
-    owner_history = models.ForeignKey('IfcOwnerHistory', on_delete=models.SET_NULL, null=True, blank=True, help_text="Information about the creation or modification of the product.")
+    IfcProduct is the base class for all physical elements that have a physical manifestation
+    and can be spatially located and oriented.
 
-    def __str__(self) -> str:
-        return self.name or "Unnamed Product"
+    Attributes:
+        object_placement (ForeignKey): Specifies the placement of the product in space.
+        representation (ForeignKey): Links to the geometric and/or topological representation of the product.
+    """
+
+    object_placement = models.ForeignKey(
+        IfcObjectPlacement,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name=_("Object Placement"),
+        help_text=_("Specifies the placement of the product in space.")
+    )
+
+    representation = models.ForeignKey(
+        IfcProductRepresentation,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name=_("Representation"),
+        help_text=_("Links to the geometric and/or topological representation of the product.")
+    )
+
+    class Meta:
+        verbose_name = _("IfcProduct")
+        verbose_name_plural = _("IfcProducts")
+
+    def __str__(self):
+        return f"{self.name} - Placement: {self.object_placement}, Representation: {self.representation}"
 
 
 # =============================================================================
