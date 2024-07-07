@@ -1,6 +1,44 @@
+# -*- coding: utf-8 -*-
+
+
+# =============================================================================
+# Docstring
+# =============================================================================
+
+"""
+Provides IFC ... Model Class
+===================================
+
+For more information, refer to:
+
+"""  # noqa E501
+
+
+# =============================================================================
+# Import
+# =============================================================================
+
+# Import | Standard Library
+
+# Import | Libraries
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+# Import | Local Modules
+from ...fields.model import (
+    IfcLabelField,
+    IfcRoleTypeField,
+    IfcTextField,
+)
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
 https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifckernel/lexical/ifcproduct.htm
 
-class IfcProduct(IfcObjectDefinition):
+class IfcProductModel(IfcObjectDefinition):
     """
     Django model representing an IfcProduct as defined in the IFC 2x3 standard.
 
@@ -27,14 +65,26 @@ class IfcProduct(IfcObjectDefinition):
         null=True,
         blank=True,
         verbose_name=_("Representation"),
-        help_text=_("Links to the geometric and/or topological representation of the product.")
+        help_text=_(
+            "Links to the geometric and/or topological representation of the product."
+        )
     )
 
-    class Meta:
-        verbose_name = _("IfcProduct")
-        verbose_name_plural = _("IfcProducts")
+    # Class | Model Meta Class
+    # =========================================================================
 
-    def __str__(self):
+    class Meta:
+        """
+        Meta Class
+        ----------
+
+        """
+        verbose_name = _("IFC Product")
+        verbose_name_plural = _("IFC Products")
+
+    def __str__(self) -> str:
+        """
+        """
         return f"{self.name} - Placement: {self.object_placement}, Representation: {self.representation}"
 
 
@@ -42,3 +92,6 @@ class IfcProduct(IfcObjectDefinition):
 # Module Variables
 # =============================================================================
 
+__all__ = [
+    "IfcProductModel",
+]
