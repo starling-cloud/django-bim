@@ -25,7 +25,7 @@ https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifckernel/lexica
 # from typing import Any, Dict, List
 
 # Import | Libraries
-from django.urls import reverse
+from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
@@ -33,8 +33,8 @@ from .model_ifc_object_definition import IfcObjectDefinitionModel
 from ...fields.model import (
     IfcLabelField,
 )
-from .ifc_unit_assignment import IfcUnitAssignment  # Assume this handles the units used throughout the project
-from .ifc_geometric_representation_context import IfcGeometricRepresentationContext  # Assume this handles the geometric context
+from .model_ifc_unit_assignment import IfcUnitAssignment
+from .model_ifc_representation_context import IfcRepresentationContextModel
 
 
 # =============================================================================
@@ -54,44 +54,53 @@ class IfcProjectModel(IfcObjectDefinitionModel):
     Model representing an IfcProject as defined in the IFC 2x3 standard.
 
     This model encapsulates the top-level project information in an IFC file,
-    providing a context for all project-related data, including project name, geographic
-    and geometric context, and units of measurement.
+    providing a context for all project-related data, including project name,
+    geographic and geometric context, and units of measurement.
 
     Attributes:
-        long_name (models.CharField): A long and more descriptive name for the project.
-        phase (models.CharField): The current phase of the project (e.g., design, construction).
+        long_name (models.CharField): A long and more descriptive name for
+            the project.
+        phase (models.CharField): The current phase of the project
+            (e.g., design, construction).
         units_in_context (ForeignKey): The units used in this project.
-        representation_contexts (ManyToManyField): Contexts that define the geometric representation.
+        representation_contexts (ManyToManyField): Contexts that define the
+            geometric representation.
     """
 
     # Class | Model Fields
     # =========================================================================
 
     long_name = IfcLabelField(
-        blank=True,
-        null=True,
-        verbose_name=_("Long Name"),
-        help_text=_("A longer and more descriptive name for the project.")
+        blank = True,
+        null = True,
+        verbose_name = _("Long Name"),
+        help_text = _(
+            "A longer and more descriptive name for the project."
+        ),
     )
 
     phase = IfcLabelField(
-        blank=True,
-        null=True,
-        verbose_name=_("Phase"),
-        help_text=_("The current phase of the project such as planning, construction, or operation.")  # noqa E501
+        blank = True,
+        null = True,
+        verbose_name = _("Phase"),
+        help_text = _(
+            "The current phase of the project such as planning, construction, or operation."  # noqa E501
+        ),
     )
 
     units_in_context = models.ForeignKey(
         IfcUnitAssignment,
-        on_delete=models.RESTRICT,
-        verbose_name=_("Units In Context"),
-        help_text=_("The units used within this project.")
+        on_delete = models.RESTRICT,
+        verbose_name = _("Units In Context"),
+        help_text = _("The units used within this project."),
     )
 
     representation_contexts = models.ManyToManyField(
-        IfcGeometricRepresentationContext,
-        verbose_name=_("Geometric Representation Contexts"),
-        help_text=_("Geometric contexts that define how the geometries are represented in the project.")
+        IfcRepresentationContextModel,
+        verbose_name = _("Geometric Representation Contexts"),
+        help_text = _(
+            "Geometric contexts that define how the geometries are represented in the project."  # noqa E501
+        ),
     )
 
     # Class | Model Meta Class
