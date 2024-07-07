@@ -69,3 +69,23 @@ class IfcCartesianPoint(IfcRepresentationItem):
 __all__ = [
     "IfcActorRoleModel",
 ]
+
+
+
+class IfcCartesianPoint(IfcGeometricRepresentationItem):
+    """
+    Django model representing an IfcCartesianPoint, which is a type of IfcGeometricRepresentationItem.
+
+    Represents a point defined by its coordinates in a Cartesian coordinate system.
+
+    Attributes:
+        coordinates (JSONField): Coordinates of the point.
+    """
+
+    coordinates = models.JSONField(
+        verbose_name=_("Coordinates"),
+        help_text=_("JSON representation of the Cartesian coordinates of the point.")
+    )
+
+    def __str__(self):
+        return f"Cartesian Point: {self.coordinates}"

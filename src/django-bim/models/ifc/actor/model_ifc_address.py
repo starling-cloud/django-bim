@@ -48,7 +48,7 @@ class IfcAddressModel(models.Model):
     IFC Address Model Class
     =======================
 
-    Model representing an IfcAddress as defined in the IFC 2x3 standard.
+    Model representing an IfcAddress as defined in the IFC standard.
 
     This model is capable of representing various types of addresses including
     physical, postal, telecom, and email addresses in accordance with the

@@ -10,7 +10,7 @@ Provides IFC Local Placement Model Class
 ========================================
 
 This module defines the IfcLocalPlacementModel class, representing an
-IfcLocalPlacement entity as specified in the IFC 2x3 standard. This model is
+IfcLocalPlacement entity as specified in the IFC standard. This model is
 used to define the placement of objects relative to the placement of other
 objects, allowing hierarchical structuring of spatial object placement
 within a project.

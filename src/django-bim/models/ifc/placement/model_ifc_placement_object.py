@@ -40,7 +40,7 @@ from ....fields.model import (
 class IfcObjectPlacementModel(models.Model):
     """
     Abstract Django model representing an IfcObjectPlacement as defined in
-    the IFC 2x3 standard.
+    the IFC standard.
 
     This model provides a basis for spatial location and orientation of
     objects, acting as an abstract supertype for all positioning entities.

@@ -106,4 +106,4 @@ class IfcTimestampField(models.TextField):
         value = self.value_from_object(obj)
         return str(
             int(value.timestamp())
-        ) if isinstance(value, datetime.datetime) else ''
+        ) if isinstance(value, datetime.datetime) else ""

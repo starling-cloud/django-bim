@@ -48,7 +48,7 @@ class IfcRepresentationModel(models.Model):
     IFC Representation Model Class
     ==============================
 
-    Model representing an IfcRepresentation as defined in the IFC 2x3 standard.
+    Model representing an IfcRepresentation as defined in the IFC standard.
 
     This model defines the representation of a product in a specific
     representation context, such as the geometry or spatial structure.

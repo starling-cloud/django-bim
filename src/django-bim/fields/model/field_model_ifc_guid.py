@@ -62,9 +62,9 @@ class IfcGloballyUniqueIdField(models.CharField):
     def __init__(self, *args, **kwargs) -> None:
         """
         """
-        kwargs['max_length'] = 22  # Ensure the length is always 22
-        kwargs['unique'] = True  # Ensure uniqueness across database entries
-        kwargs['validators'] = [validate_ifc_guid]
+        kwargs["max_length"] = 22  # Ensure the length is always 22
+        kwargs["unique"] = True  # Ensure uniqueness across database entries
+        kwargs["validators"] = [validate_ifc_guid]
         super().__init__(*args, **kwargs)
 
     def from_db_value(

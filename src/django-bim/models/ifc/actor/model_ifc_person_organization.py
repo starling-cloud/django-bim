@@ -44,7 +44,7 @@ class IfcPersonAndOrganizationModel(models.Model):
     ===================================
 
     Model representing an IfcPersonAndOrganization as defined in the
-    IFC 2x3 standard.
+    IFC standard.
 
     This model links individuals (IfcPerson) with organizations
     (IfcOrganization), capturing their associations within the context of

@@ -10,7 +10,7 @@ Provides IFC Object Definition Model Class
 =========================================
 
 This Django model class serves as an abstract base for all object definitions
-according to the IFC 2x3 standard. It encapsulates common attributes and
+according to the IFC standard. It encapsulates common attributes and
 behaviors that are inherited by more specific IFC entity models, facilitating
 generic metadata management and object relationships.
 
@@ -52,7 +52,7 @@ class IfcObjectDefinitionModel(IfcRootModel):
     ================================
 
     Abstract model representing an IfcObjectDefinition as defined in the
-    IFC 2x3 standard.
+    IFC standard.
 
     This class provides a framework for all derived IFC object models and
     includes mechanisms for generic metadata management and establishing

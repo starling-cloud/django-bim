@@ -6,12 +6,12 @@
 # =============================================================================
 
 """
-Provides IFC Representation Item Model Class
+Provides IFC Geometric Representation Item Model Class
 ============================================
 
 
 For detailed specifications, see:
-https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcgeometryresource/lexical/ifcrepresentationitem.htm
+https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcgeometryresource/lexical/ifcgeometricrepresentationitem.htm
 
 """  # noqa E501
 
@@ -40,33 +40,30 @@ from django.utils.translation import gettext_lazy as _
 # Classes
 # =============================================================================
 
-class IfcRepresentationItemModel(models.Model):
+class IfcGeometricRepresentationItemModel(models.Model):
     """
-    IFC Representation Item Model Class
+    IFC Geometric Representation Item Model Class
     ===================================
 
-    Abstract Django model representing an IfcRepresentationItem, which is
-    defined in the IFC standard as the abstract supertype of all geometric
-    and topological representation items within a representation.
+    Abstract Django model representing an IfcGeometricRepresentationItem as defined in the IFC standard.
 
-    This model is abstract and should be inherited by specific models that
-    implement detailed geometric or topological structures.
+    This is the base class for all geometric representation items, which are components of geometric models
+    in building information modeling.
 
     Attributes:
-        name (CharField): Optional name of the representation item.
+        representation_identifier (CharField): An optional identifier for the geometric representation item.
 
     """
 
     # Class | Model Fields
     # =========================================================================
 
-    # not part of specification?
-    name = models.CharField(
-        max_length = 255,
-        blank = True,
-        null = True,
-        verbose_name = _("Name"),
-        help_text = _("Optional name of the representation item."),
+    representation_identifier = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name=_("Representation Identifier"),
+        help_text=_("An optional identifier for the geometric representation item.")
     )
 
     # Class | Model Meta Class
@@ -78,7 +75,9 @@ class IfcRepresentationItemModel(models.Model):
         ----------
 
         """
-        abstract = True  # Makes this model an abstract base class
+        abstract = True  # This model will not be created in the database
+        verbose_name = _("IFC Geometric Representation Item")
+        verbose_name_plural = _("IFC Geometric Representation Items")
 
     # Class | Model Methods
     # =========================================================================
@@ -86,7 +85,7 @@ class IfcRepresentationItemModel(models.Model):
     def __str__(self) -> str:
         """
         """
-        return self.name if self.name else super().__str__()
+        return self.representation_identifier if self.representation_identifier else super().__str__()
 
 
 # =============================================================================
@@ -94,5 +93,5 @@ class IfcRepresentationItemModel(models.Model):
 # =============================================================================
 
 __all__ = [
-    "IfcRepresentationItemModel",
+    "IfcGeometricRepresentationItem",
 ]

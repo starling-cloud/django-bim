@@ -6,11 +6,11 @@
 # =============================================================================
 
 """
-Provides IFC Text Model Field Class
-===================================
+Provides IFC Label Model Field Class
+====================================
 
 
-https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcmeasureresource/lexical/ifctext.htm
+https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcmeasureresource/lexical/ifclabel.htmfrom django.db import models
 
 """  # noqa E501
 
@@ -32,36 +32,41 @@ from django.utils.translation import gettext_lazy as _
 # Variables
 # =============================================================================
 
-__all__ = ["IfcTextField", ]
+__all__ = ["IfcLabelField", ]
 
 
 # =============================================================================
 # Classes
 # =============================================================================
 
-class IfcTextField(models.TextField):
+class IfcLabelField(models.CharField):
     """
-    IFC Text Model Field Class
-    ==========================
+    IFC Label Model Field Class
+    ===========================
 
-    Custom field for IfcText, representing a textual description in IFC models.
+    Custom field for IfcLabel, representing a label, identifier, or name in
+    IFC models.
 
-    This field is tailored to meet the IFC standard requirements for textual
-    data, such as descriptions, notes, or any other extensive textual
-    information pertinent to IFC entities. It is based on Django's TextField
-    and ensures that data stored complies with the expected format for IFC
-    text fields.
+    This custom field is based on Django's CharField and is designed to ensure
+    compliance with the IFC standard for labels, typically used for short
+    texts like names, titles, or other identifiers. It defaults to a maximum
+    length of 255 characters unless specified otherwise.
 
     Attributes:
-        help_text (str): Guidance for input, specifying the field's use
-            according to IFC standards, displayed in admin or forms.
+        max_length (int): Maximum length of the field.
+        help_text (str): Description of the field usage, provided to guide
+        users in admin or forms.
 
     """
 
-    def __init__(self, *args, **kwargs):
-        kwargs['help_text'] = kwargs.get(
-            'help_text',
-            _("Enter a textual description according to IFC standards.")
+    def __init__(self, *args, **kwargs) -> None:
+        """
+        """
+        # Default max length for IfcLabel
+        kwargs["max_length"] = kwargs.get("max_length", 255)
+        kwargs["help_text"] = kwargs.get(
+            "help_text",
+            _("Enter a label or identifier according to IFC standards.")
         )
         super().__init__(*args, **kwargs)
 
@@ -72,13 +77,13 @@ class IfcTextField(models.TextField):
 
         Parameters:
             value (str): The string value from the database.
-            expression: Unused, included for compatibility with Django's
-                signature.
-            connection: Unused, included for compatibility with Django's
-                signature.
+            expression: The expression (unused here, included for method
+                signature compliance).
+            connection: The database connection (unused here, included for
+                method signature compliance).
 
         Returns:
-            str: The value as a string, or None if the value is None.
+            str: The string value or None if the value is None.
         """
         if value is None:
             return value
@@ -91,8 +96,7 @@ class IfcTextField(models.TextField):
         clean and data loading.
 
         Parameters:
-            value (str): The value to be converted, either from the database
-                or input.
+            value (str): The string value from the database or input.
 
         Returns:
             str: The value as a string, ensuring it matches the expected
@@ -105,12 +109,12 @@ class IfcTextField(models.TextField):
     def get_prep_value(self, value: str) -> str:
         """
         Prepares the value before saving it into the database.
-        This method ensures the text is stored correctly in the database.
+        This method ensures the label is stored correctly in the database.
 
         Parameters:
             value (str): The string value to be prepared.
 
         Returns:
-            str: The value formatted for database storage.
+            str: The value formatted as a string ready for database insertion.
         """
         return super().get_prep_value(value)

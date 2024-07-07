@@ -79,4 +79,5 @@ Adjust the `README.md` as needed to fit the specifics of your project and its co
 
 ## Resources
 
+- https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/content/introduction.htm
 - https://github.com/buildingSMART/ifc-validation-data-model

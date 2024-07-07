@@ -9,7 +9,7 @@
 Provides IFC Actor Role Model Class
 ===================================
 
-This model represents the IfcActorRole as defined in the IFC 2x3 standard,
+This model represents the IfcActorRole as defined in the IFC standard,
 detailing the roles played by different actors (e.g., individuals or
 organizations) in construction projects.
 
@@ -30,9 +30,9 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
-from ...fields.model import (
+from ....fields.model import (
     IfcLabelField,
-    IfcRoleTypeField,
+    IfcRoleEnumField,
     IfcTextField,
 )
 
@@ -64,10 +64,10 @@ class IfcActorRoleModel(models.Model):
     # Class | Model Fields
     # =========================================================================
 
-    role_type = IfcRoleTypeField(
+    role = IfcRoleEnumField(
         verbose_name = _("Role"),
         help_text = _(
-            "The role of the actor in the project according to IFC standards."  # noqa E501
+            "The role of the actor in the project according to IFC standards."
         ),
     )
 

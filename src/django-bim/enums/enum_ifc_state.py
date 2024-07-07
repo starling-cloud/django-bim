@@ -41,7 +41,7 @@ class IfcStateEnum(Enum):
     ===================
 
     Enumeration for IfcStateEnum providing state types according to the
-    IFC 2x3 standard.
+    IFC standard.
 
     This enum represents different states an object in a building construction
     project can have, helping to manage object status within the project's

@@ -51,7 +51,7 @@ class IfcProjectModel(IfcObjectDefinitionModel):
     IFC Project Model Class
     =======================
 
-    Model representing an IfcProject as defined in the IFC 2x3 standard.
+    Model representing an IfcProject as defined in the IFC standard.
 
     This model encapsulates the top-level project information in an IFC file,
     providing a context for all project-related data, including project name,

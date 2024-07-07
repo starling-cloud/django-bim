@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 class IfcCurve(models.Model):
     """
-    Abstract Django model representing an IfcCurve as defined in the IFC 2x3 standard.
+    Abstract Django model representing an IfcCurve as defined in the IFC standard.
     
     IfcCurve is the abstract supertype for all curve entities within the IFC schema. This model
     provides a common interface for all derived curve types, encapsulating essential properties

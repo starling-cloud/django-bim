@@ -10,7 +10,7 @@ Provides IFC Person Model Class
 ===============================
 
 This Django model encapsulates an individual's detailed information,
-adhering to the IFC 2x3 standard for representing persons involved in
+adhering to the IFC standard for representing persons involved in
 building projects. It covers personal identification, names, titles,
 roles, and addresses.
 
@@ -31,7 +31,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
-from ...fields.model import (
+from ....fields.model import (
     IfcIdentifierField,
     IfcLabelField,
 )
@@ -51,7 +51,7 @@ class IfcPersonModel(models.Model):
     IFC Person Model Class
     ======================
 
-    Represents an IfcPerson as defined by the IFC 2x3 standard.
+    Represents an IfcPerson as defined by the IFC standard.
 
     This model handles personal details necessary for identifying individuals
     participating in construction projects. It facilitates the management of
@@ -82,15 +82,18 @@ class IfcPersonModel(models.Model):
         null = True,
         verbose_name = _("Identification"),
         help_text = _(
+            "Identification of the person."
             "A unique identifier for the person, such as an employee or membership number."  # noqa E501
         ),
     )
 
-    last_name = IfcLabelField(
+    family_name = IfcLabelField(
         blank = True,
         null = True,
-        verbose_name = _("Last Name"),
-        help_text = _("The individual's surname or family name."),
+        verbose_name = _("Family Name"),
+        help_text = _(
+            "The name by which the family identity of the person may be recognized."  # noqa E501
+        ),
     )
 
     first_name = IfcLabelField(

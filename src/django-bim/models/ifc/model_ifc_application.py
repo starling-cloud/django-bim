@@ -11,7 +11,7 @@ Provides IFC Application Model Class
 
 This module defines the IfcApplicationModel, which records details about the
 software application used in the creation, modification, or interpretation of
-IFC data models. This model is in accordance with the IFC 2x3 standard and
+IFC data models. This model is in accordance with the IFC standard and
 includes information about the application's developer, name, version, and a
 unique identifier.
 

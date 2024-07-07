@@ -9,7 +9,7 @@
 Provides IFC Organization Model Class
 =====================================
 
-This model represents an organization as defined in the IFC 2x3 standard,
+This model represents an organization as defined in the IFC standard,
 encompassing entities involved in construction projects. This model captures
 crucial details such as the organization's name, unique identifier, roles
 within construction projects, and their addresses.

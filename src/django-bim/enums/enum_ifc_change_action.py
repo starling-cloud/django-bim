@@ -40,7 +40,7 @@ class IfcChangeActionEnum(Enum):
     ============================
 
     Enumeration for IfcChangeActionEnum providing change types according to the
-    IFC 2x3 standard.
+    IFC standard.
 
     This enum represents the types of procedural changes that can be applied
     to project data, aiding in tracking modifications, additions, and
@@ -53,11 +53,11 @@ class IfcChangeActionEnum(Enum):
     - DELETED: Indicates the object was deleted.
     - NOTDEFINED: Used when the change action is not defined.
     """
-    NOCHANGE = _('No Change')
-    MODIFIED = _('Modified')
-    ADDED = _('Added')
-    DELETED = _('Deleted')
-    NOTDEFINED = _('Not Defined')
+    NOCHANGE = _("No Change")
+    MODIFIED = _("Modified")
+    ADDED = _("Added")
+    DELETED = _("Deleted")
+    NOTDEFINED = _("Not Defined")
 
     @classmethod
     def choices(cls):

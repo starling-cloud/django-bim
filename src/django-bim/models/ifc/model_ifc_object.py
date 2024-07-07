@@ -9,7 +9,7 @@
 Provides IFC Object Model Class
 ===============================
 
-This Django model represents an IfcObject as defined in the IFC 2x3 standard,
+This Django model represents an IfcObject as defined in the IFC standard,
 which serves as a generalization for any entity participating in a project
 context. It supports the instantiation of both physical (product) and
 non-physical (control elements) entities.
@@ -51,7 +51,7 @@ class IfcObjectModel(IfcObjectDefinitionModel):
     IFC Object Model Class
     ======================
 
-    Model representing an IfcObject as defined in the IFC 2x3 standard.
+    Model representing an IfcObject as defined in the IFC standard.
 
     IfcObject is a generalization of any entity that participates in a
     project context and forms the most generic instantiation of all entities

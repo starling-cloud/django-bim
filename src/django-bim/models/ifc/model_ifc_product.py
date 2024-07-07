@@ -40,7 +40,7 @@ https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifckernel/lexica
 
 class IfcProductModel(IfcObjectDefinition):
     """
-    Django model representing an IfcProduct as defined in the IFC 2x3 standard.
+    Django model representing an IfcProduct as defined in the IFC standard.
 
     IfcProduct is the base class for all physical elements that have a physical manifestation
     and can be spatially located and oriented.

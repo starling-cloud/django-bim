@@ -51,7 +51,7 @@ class IfcRepresentationContextModel(models.Model):
     ======================================
 
     Model representing an IfcRepresentationContext as defined in the
-    IFC 2x3 standard.
+    IFC standard.
 
     This model provides a context for all representations, detailing the
     coordinate system and dimensionality, ensuring that the geometric or

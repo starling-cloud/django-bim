@@ -19,9 +19,11 @@ Django BIM IFC Representation Models Module
 # =============================================================================
 
 # Import | Local Modules
-from .model_ifc_placement_grid import IfcGridPlacementModel
-from .model_ifc_placement_local import IfcLocalPlacementModel
-from .model_ifc_placement_object import IfcObjectPlacementModel
+from .model_ifc_representation import IfcRepresentationModel
+from .model_ifc_representation_context import IfcRepresentationContextModel
+from .model_ifc_representation_item import IfcRepresentationItemModel
+from .model_ifc_representation_item_geometric import IfcGeometricRepresentationItemModel
+from .model_ifc_representation_map import IfcGeometricRepresentationMapModel
 
 
 # =============================================================================
@@ -29,7 +31,9 @@ from .model_ifc_placement_object import IfcObjectPlacementModel
 # =============================================================================
 
 __all__ = [
-    "IfcGridPlacementModel",
-    "IfcLocalPlacementModel",
-    "IfcObjectPlacementModel",
+    "IfcRepresentationModel",
+    "IfcRepresentationContextModel",
+    "IfcRepresentationItemModel",
+    "IfcGeometricRepresentationItemModel",
+    "IfcGeometricRepresentationMapModel",
 ]

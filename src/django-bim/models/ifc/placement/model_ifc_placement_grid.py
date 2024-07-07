@@ -41,7 +41,7 @@ class IfcGridPlacementModel(IfcObjectPlacementModel):
     IFC Grid Placement Model Class
     ==============================
 
-    Model representing an IfcGridPlacement as defined in the IFC 2x3 standard.
+    Model representing an IfcGridPlacement as defined in the IFC standard.
 
     This model specifies the placement of objects within a project by referring
     to a grid structure.

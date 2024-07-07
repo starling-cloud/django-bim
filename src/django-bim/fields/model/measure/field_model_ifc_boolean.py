@@ -14,10 +14,10 @@ class IfcBooleanModelField(models.IntegerField):
     description = _("A boolean field for IFC that supports True, False, and Unknown states.")
 
     def __init__(self, *args, **kwargs):
-        kwargs['choices'] = (
-            (1, _('True')),
-            (0, _('False')),
-            (-1, _('Unknown'))
+        kwargs["choices"] = (
+            (1, _("True")),
+            (0, _("False")),
+            (-1, _("Unknown"))
         )
         super().__init__(*args, **kwargs)
 

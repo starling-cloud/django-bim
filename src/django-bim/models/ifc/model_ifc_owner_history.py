@@ -11,7 +11,7 @@ Provides IFC Owner History Model Class
 
 This Django model tracks the ownership and modification history of IFC entities,
 documenting who made changes, when these changes were made, and the nature of
-these changes in line with the IFC 2x3 standard.
+these changes in line with the IFC standard.
 
 For more information, refer to:
 https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcutilityresource/lexical/ifcownerhistory.htm
@@ -57,7 +57,7 @@ class IfcOwnerHistoryModel(models.Model):
 
     This model tracks modifications and ownership history related to IFC
     entities, capturing who made changes, when, and what kind of change was
-    made, according to the IFC 2x3 standard.
+    made, according to the IFC standard.
 
     Attributes:
         creation_user (ForeignKey): The user who initially created the entity.

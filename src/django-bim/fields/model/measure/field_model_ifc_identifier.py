@@ -59,7 +59,7 @@ class IfcIdentifierField(models.CharField):
         """
         """
         # Default max length for IfcIdentifier
-        kwargs['max_length'] = kwargs.get('max_length', 255)
+        kwargs["max_length"] = kwargs.get("max_length", 255)
         super().__init__(*args, **kwargs)
 
     def from_db_value(self, value: str, expression, connection) -> str:
@@ -99,7 +99,7 @@ class IfcIdentifierField(models.CharField):
     def validate(self, value: str, model_instance):
         """
         Adds any additional validation for IfcIdentifier to ensure it meets
-        IFC's standard requirements for format, uniqueness, etc., if
+        IFC"s standard requirements for format, uniqueness, etc., if
         applicable.
 
         Parameters:
