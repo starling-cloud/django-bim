@@ -6,8 +6,8 @@
 # =============================================================================
 
 """
-Django IFC Model Fields Module
-==============================
+Django BIM IFC Model Fields Module
+==================================
 
 This module provides custom Django model fields tailored to handle specific
 data types used in the IFC (Industry Foundation Classes) standard for
