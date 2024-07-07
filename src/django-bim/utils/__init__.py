@@ -6,7 +6,7 @@
 # =============================================================================
 
 """
-Django IFC Utils Module
+Django BIM Utils Module
 =======================
 
 This module provides utility functions and classes that facilitate the
