@@ -19,7 +19,7 @@ pip install django-bim
 Alternatively, if you want to install from source:
 
 ```bash
-git clone https://github.com/yourusername/django-bim.git
+git clone https://github.com/starling-cloud/django-bim.git
 cd django-bim
 poetry install
 ```
@@ -31,7 +31,7 @@ To get started with Django BIM, add it to your installed apps in your Django set
 ```python
 INSTALLED_APPS = [
     ...
-    'django_ifc',
+    'django-bim',
     ...
 ]
 ```
