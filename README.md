@@ -60,12 +60,6 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 - **Starling Associates** - *Initial work* - [Starling Associates](https://github.com/starling-cloud/django-bim)
 
-## Acknowledgments
-
-- Thanks to anyone whose code was used
-- Inspiration
-- etc.
-
 ### Notes
 
 - **Installation**: Make sure the installation instructions are correct. You might need to adjust them depending on how you configure your package deployment and whether you use `pip` or another method like `Poetry`.
