@@ -19,11 +19,14 @@ Provides IFC Role Enum Model Field Class
 # Import | Standard Library
 
 # Import | Libraries
+from typing import Any
+
 from django.db import models
-# from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
 from ...enums.actor import IfcRoleEnum
+
+# from django.utils.translation import gettext_lazy as _
 
 
 # =============================================================================
@@ -34,6 +37,7 @@ from ...enums.actor import IfcRoleEnum
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class IfcRoleEnumField(models.CharField):
     """
@@ -57,13 +61,17 @@ class IfcRoleEnumField(models.CharField):
         help_text (str): Explanation of the field"s purpose and usage.
     """
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+        self,
+        *args,
+        **kwargs,
+    ) -> None:
         kwargs.setdefault("max_length", 50)
         kwargs.setdefault("choices", IfcRoleEnum.choices())
         kwargs.setdefault("default", IfcRoleEnum.USERDEFINED.name)
         super().__init__(*args, **kwargs)
 
-    def deconstruct(self):
+    def deconstruct(self) -> tuple[Any, Any, Any, Any]:
         """
         Deconstructs the field to allow for custom field arguments to be
         correctly serialized by Django"s migration framework. This method
@@ -85,6 +93,6 @@ class IfcRoleEnumField(models.CharField):
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "IfcRoleEnumField",
 ]
