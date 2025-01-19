@@ -1,4 +1,66 @@
 {
-    "recommendations": [],
-    "unwantedRecommendations": []
+    "recommendations": [
+
+        // Docker
+        // ====================================================================
+
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
+        "marquesmps.dockerfile-validator",
+
+        // TypeScript / JavaScript
+        // ====================================================================
+
+        // TypeScript / JavaScript | Formatting
+        // --------------------------------------------------------------------
+
+        "esbenp.prettier-vscode",
+
+        // TypeScript / JavaScript | Linting
+        // --------------------------------------------------------------------
+
+        "dbaeumer.vscode-eslint",
+
+
+        // Python
+        // ====================================================================
+
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+
+        // Python | Packaging
+        // --------------------------------------------------------------------
+
+        "zeshuaro.vscode-python-poetry",    // Poetry
+
+        // Python | Formatting
+        // --------------------------------------------------------------------
+
+        "ms-python.isort",
+        "ms-python.autopep8",
+        "ms-python.black-formatter",
+
+        // Python | Linting
+        // --------------------------------------------------------------------
+
+        "ms-python.pylint",
+        "ms-python.flake8",
+
+
+
+        // SCSS / CSS
+        // ====================================================================
+
+        // Python | Formatting
+        // --------------------------------------------------------------------
+
+        "sibiraj-s.vscode-scss-formatter",
+
+        // SCSS / CSS | Linting
+        // --------------------------------------------------------------------
+        "stylelint.vscode-stylelint",
+
+
+    ]
 }
