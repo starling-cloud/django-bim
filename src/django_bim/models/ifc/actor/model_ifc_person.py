@@ -31,11 +31,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
-from ....fields.model import (
-    IfcIdentifierField,
-    IfcLabelField,
-)
-
+from ....fields.model import IfcIdentifierField, IfcLabelField
 
 # =============================================================================
 # Variables
@@ -45,6 +41,7 @@ from ....fields.model import (
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class IfcPersonModel(models.Model):
     """
@@ -77,71 +74,71 @@ class IfcPersonModel(models.Model):
     # =========================================================================
 
     identifier = IfcIdentifierField(
-        unique = True,
-        blank = True,
-        null = True,
-        verbose_name = _("Identification"),
-        help_text = _(
-            "Identification of the person."
+        unique=True,
+        blank=True,
+        null=True,
+        verbose_name=_(message="Identification"),
+        help_text=_(
+            message="Identification of the person."
             "A unique identifier for the person, such as an employee or membership number."  # noqa E501
         ),
     )
 
     family_name = IfcLabelField(
-        blank = True,
-        null = True,
-        verbose_name = _("Family Name"),
-        help_text = _(
-            "The name by which the family identity of the person may be recognized."  # noqa E501
+        blank=True,
+        null=True,
+        verbose_name=_(message="Family Name"),
+        help_text=_(
+            message="The name by which the family identity of the person may be recognized."  # noqa E501
         ),
     )
 
     first_name = IfcLabelField(
-        blank = True,
-        null = True,
-        verbose_name = _("First Name"),
-        help_text = _("The individual's given name."),
+        blank=True,
+        null=True,
+        verbose_name=_(message="First Name"),
+        help_text=_(message="The individual's given name."),
     )
 
     middle_names = IfcLabelField(
-        blank = True,
-        null = True,
-        verbose_name = _("Middle Names"),
-        help_text = _("Any middle names of the individual."),
+        blank=True,
+        null=True,
+        verbose_name=_(message="Middle Names"),
+        help_text=_(message="Any middle names of the individual."),
     )
 
     prefix_titles = IfcLabelField(
-        blank = True,
-        null = True,
-        verbose_name = _("Prefix Titles"),
-        help_text = _(
-            "Honorifics or formal titles preceding the individual's name."
+        blank=True,
+        null=True,
+        verbose_name=_(message="Prefix Titles"),
+        help_text=_(
+            message="Honorifics or formal titles preceding the individual's name."
         ),
     )
 
     suffix_titles = IfcLabelField(
-        blank = True,
-        null = True,
-        verbose_name = _("Suffix Titles"),
-        help_text = _(
-            "Qualifications or titles following the individual's name."
+        blank=True,
+        null=True,
+        verbose_name=_(message="Suffix Titles"),
+        help_text=_(
+            message="Qualifications or titles following the individual's name."
         ),
     )
 
     roles = models.ManyToManyField(
-        "IfcRoleModel",
+        to="IfcRoleModel",
         blank=True,
-        verbose_name = _("Roles"),
-        help_text = _(
-            "The roles held by the individual within various projects."
+        verbose_name=_(message="Roles"),
+        help_text=_(
+            message="The roles held by the individual within various projects."
         ),
     )
 
     addresses = models.ManyToManyField(
         "IfcAddressModel",
-        blank = True,
-        verbose_name = _("Addresses"),
-        help_text = _("The individual's contact addresses."),
+        blank=True,
+        verbose_name=_(message="Addresses"),
+        help_text=_(message="The individual's contact addresses."),
     )
 
     class Meta:
@@ -150,10 +147,11 @@ class IfcPersonModel(models.Model):
         ----------
 
         """
-        verbose_name = _("IFC Person")
-        verbose_name_plural = _("IFC Persons")
+
+        verbose_name: str = _(message="IFC Person")
+        verbose_name_plural: str = _(message="IFC Persons")
         # Default ordering by last name then first name for easier navigation
-        ordering = [
+        ordering: list[str] = [
             "last_name",
             "first_name",
         ]
@@ -170,7 +168,7 @@ class IfcPersonModel(models.Model):
             self.first_name,
             self.middle_names,
             self.last_name,
-            self.suffix_titles
+            self.suffix_titles,
         ]
         # Efficiently concatenate non-empty name parts
 
@@ -181,6 +179,6 @@ class IfcPersonModel(models.Model):
 # Module Variables
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "IfcPersonModel",
 ]
