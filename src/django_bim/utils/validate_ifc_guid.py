@@ -36,14 +36,17 @@ from django.utils.translation import gettext_lazy as _
 # Variables
 # =============================================================================
 
-__all__ = ["validate_ifc_guid", ]
+__all__: list[str] = [
+    "validate_ifc_guid",
+]
 
 
 # =============================================================================
 # Functions
 # =============================================================================
 
-def validate_ifc_guid(value):
+
+def validate_ifc_guid(value) -> None:
     """
     IFC GUID Validation Function
     ============================
@@ -60,12 +63,17 @@ def validate_ifc_guid(value):
     """
 
     # Define the regex pattern for a Base64 encoded string of 22 characters
-    pattern = r'^[A-Za-z0-9+/]{22}$'
+    pattern = r"^[A-Za-z0-9+/]{22}$"
 
     # Check if the provided value matches the pattern
-    if not isinstance(value, str) or not re.match(pattern, value):
+    if not isinstance(value, str) or not re.match(
+        pattern=pattern,
+        string=value,
+    ):
         raise ValidationError(
-            _("'%(value)s' is not a valid 22-character Base64 encoded string."),  # noqa E501
-            params={'value': value},
-            code='invalid'  # Including an error code for programmatic handling
+            message=_(
+                message="'%(value)s' is not a valid 22-character Base64 encoded string."
+            ),  # noqa E501
+            params={"value": value},
+            code="invalid",  # Including an error code for programmatic handling
         )
