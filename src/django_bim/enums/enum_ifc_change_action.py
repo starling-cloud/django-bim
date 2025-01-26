@@ -22,10 +22,13 @@ https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcutilityresour
 
 # Import | Standard Library
 from enum import Enum
-# from typing import Any, Dict, List
+from typing import Any
 
 # Import | Libraries
 from django.utils.translation import gettext_lazy as _
+
+# from typing import Any, Dict, List
+
 
 # Import | Local Modules
 
@@ -33,6 +36,7 @@ from django.utils.translation import gettext_lazy as _
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class IfcChangeActionEnum(Enum):
     """
@@ -53,14 +57,15 @@ class IfcChangeActionEnum(Enum):
     - DELETED: Indicates the object was deleted.
     - NOTDEFINED: Used when the change action is not defined.
     """
-    NOCHANGE = _("No Change")
-    MODIFIED = _("Modified")
-    ADDED = _("Added")
-    DELETED = _("Deleted")
-    NOTDEFINED = _("Not Defined")
+
+    NOCHANGE: str = _(message="No Change")
+    MODIFIED: str = _(message="Modified")
+    ADDED: str = _(message="Added")
+    DELETED: str = _(message="Deleted")
+    NOTDEFINED: str = _(message="Not Defined")
 
     @classmethod
-    def choices(cls):
+    def choices(cls) -> tuple[tuple[str, Any], ...]:
         """
         Returns the choices for field choices in a Django model field,
         formatted as required by Django's field choices.
@@ -71,3 +76,12 @@ class IfcChangeActionEnum(Enum):
                 choices.
         """
         return tuple((item.name, item.value) for item in cls)
+
+
+# =============================================================================
+# Export
+# =============================================================================
+
+__all__: list[str] = [
+    "IfcChangeActionEnum",
+]
