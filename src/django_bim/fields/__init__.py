@@ -23,12 +23,7 @@ Django applications.
 # =============================================================================
 
 # Import | Local Modules
-from .model import (
-    IfcGloballyUniqueIdField,
-    IfcLabelField,
-    IfcTextField,
-)
-
+from .model import IfcGloballyUniqueIdField, IfcLabelField, IfcTextField
 
 # =============================================================================
 # Module Level Variables
